@@ -1,0 +1,35 @@
+---
+name: dotter
+version: 0.0.1
+author: David Buchan-Swanson <david.buchanswanson@gmail.com>
+about: Manages dotfiles and keeps your secrets secret
+subcommands:
+    - init:
+        about: Initializes a system, ready for dotter
+    - checkin:
+        about: Adds a file or folder to dotter under the provided category
+        args:
+            - category:
+                help: The category to store this in dotter as
+                required: true
+                index: 1
+            - item:
+                help: The file (or directory) you want to check in to dotter
+                required: true
+                index: 2
+    - category:
+        about: Adds a category to dotter
+        subcommands:
+            - create:
+                about: Create a new category inside of dotter
+                args:
+                    - name:
+                        help: The name of the new category
+                        required: true
+    - secure:
+        about: Secures a file (encrypts with AES256)
+        args:
+            - item:
+                help: |
+                    The file (or directory) you want to secure. Note: securing a directory will cause all files below to be secured, not the root level directory
+                required: true

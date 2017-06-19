@@ -1,0 +1,12 @@
+[package]
+name = "dotter"
+version = "0.0.1"
+authors = ["David Buchan-Swanson <david.buchanswanson@gmail.com>"]
+
+[dependencies]
+clap = { version = "2.24.2", features = ["yaml"] }
+ansi_term = "0.9.0"
+toml = "0.4"
+walkdir = "1"
+ring = "0.11.0"
+
